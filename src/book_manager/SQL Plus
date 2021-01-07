@@ -1,0 +1,81 @@
+  SQL> create table books		책 관련 테이블 생성
+  2  (bnum number(5),		책 번호 할당
+  3  bname varchar2(20),	책 이름
+  4  author varchar2(20),	저자명
+  5  bdate date);			출간일자
+  
+  SQL> CREATE SEQUENCE books_seq	책 관련 시퀸스 생성	1~99999
+  2  INCREMENT BY 1					
+  3  START WITH 1
+  4  MINVALUE 1
+  5  MAXVALUE 99999
+  6  NOCYCLE
+  7  NOCACHE;
+  
+  
+  
+  
+  SQL> create table booking		대여 및 연체 관리용 테이블
+  2  (bnum number(5),			책 번호
+  3  unum varchar2(20),			회원 번호
+  4  booked date);				대여 일자
+  
+  
+  
+  
+  SQL> create table users		회원 관리용 테이블
+  2  (unum number(4),			회원 번호
+  3  id varchar2(20),			아이디
+  4  pw varchar2(20),			비밀번호
+  5  uname varchar2(20),		회원 이름
+  6  phone varchar2(20),		회원 전화번호
+  7  sus number(1));			이용 정지 여부
+  
+  SQL> CREATE SEQUENCE users_seq	회원 관련 시퀸스 1~9999
+  2  INCREMENT BY 1
+  3  START WITH 1
+  4  MINVALUE 1
+  5  MAXVALUE 9999
+  6  NOCYCLE
+  7  NOCACHE;
+  
+  
+  
+  
+  
+  SQL> INSERT INTO book
+  2  VALUES(books_seq.NEXTVAL, 'C++', 'Kim', '20/03/09');
+
+1 row created.
+
+SQL> INSERT INTO book
+  2  VALUES(books_seq.NEXTVAL, 'SQL', 'Lee', '20/02/01');
+
+1 row created.
+
+SQL> INSERT INTO book
+  2  VALUES(books_seq.NEXTVAL, 'Java', 'Jin', '95/06/09');
+
+1 row created.
+
+SQL> INSERT INTO book
+  2  VALUES(books_seq.NEXTVAL, 'Java Script', 'Jason', '88/12/02');
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
